@@ -1,0 +1,106 @@
+﻿<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+        .header {
+            color: blueviolet
+        }
+
+        .features {
+            width: 100%;
+            display: table;
+        }
+
+        .features-left {
+            width: 50%;
+            display: table-cell;
+        }
+
+        .features-right {
+            width: 50%;
+            display: table-cell;
+        }
+
+        .footer-header {
+            display: table;
+            width: 100%;
+        }
+
+        .footer-title, .footer-image {
+            width: 50%;
+            display: table-cell;
+        }
+
+    </style>
+</head>
+
+<page size="A4">
+    <section class="header">
+        <h1>
+            {{Title}}
+        </h1>
+
+        <ul>
+            <li>{{CompanyName}}</li>
+            <li>{{Address}}</li>
+            <li>{{PhoneNumber}}</li>
+        </ul>
+        <p>{{HeaderDescription}}</p>
+        <ul>
+            {{#each Services}}
+            <li>{{this}}</li>
+            {{/each}}
+        </ul>
+    </section>
+    <section class="features">
+        <div class="features-left">
+            <h2>{{FeaturesTitle}}</h2>
+            {{#each Features}}
+            <div>{{Title}}</div>
+            {{#each Contents}}
+            <p>{{this}}</p>
+            {{/each}}
+            {{/each}}
+        </div>
+        <div class="features-right">
+            <img class="img" src="data:image/jpg;base64, {{ImageBase64}}" alt="product image" />
+            <p>{{ServicesAmountTitle}}</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            {{ServiceAmountsTableHeader1}}
+                        </th>
+                        <th class="th-amount">
+                            {{ServiceAmountsTableHeader2}}
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each ServiceAmounts}}
+                    <tr>
+                        <td class="td-name">
+                            {{Name}}
+                        </td>
+                        <td class="td-amount">
+                            {{Amount}}
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <section class="footer">
+        <div class="footer-header">
+            <div class="footer-title">
+                <p>{{FooterTitle}}</p>
+            </div>
+            <div class="footer-image">
+                <img class="img" style="width:100px; height:100px;" src="data:image/jpg;base64, {{FooterImage}}" alt="product image" />
+            </div>
+        </div>
+        <div class="footer-description">
+            <p>{{FooterDescription}}</p>
+        </div>
+    </section>
+</page>
