@@ -1,6 +1,6 @@
 ﻿namespace PdfBuilder.Services;
 
-public class CalculatorReportService: ICalculatorReportService
+public class CalculatorReportService : ICalculatorReportService
 {
     private readonly IPdfBuilderService _pdfBuilderService;
     private readonly IFileService _fileService;

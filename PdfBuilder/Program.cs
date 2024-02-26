@@ -5,9 +5,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
-builder.Services.AddTransient<IFileService, FileService> ();
-builder.Services.AddTransient<IPdfBuilderService, PdfBuilderService> ();
-builder.Services.AddTransient<ICalculatorReportService, CalculatorReportService> ();
+builder.Services.AddTransient<IFileService, FileService>();
+builder.Services.AddTransient<IPdfBuilderService, PdfBuilderService>();
+builder.Services.AddTransient<ICalculatorReportService, CalculatorReportService>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
